@@ -8,9 +8,13 @@ upper ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 number ='1234567890'
 symmbols = '[]()*;/,-+'
 
-all = lower + upper + number + symmbols
-length = int(input('Defina el largo de la constrasena'))
+all = lower + upper + number + symmbols 
 
+try:
+    length = int(input('Defina el largo de la constrasena'))
+except ValueError:
+    print('Cargue un numero en el largo de la contrasena')
+    
 password =''.join(random.sample(all,length))
 print (password)
 f.write(password)
